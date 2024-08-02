@@ -44,29 +44,31 @@ public class SampleTest {
 
     @Test
     public void sampleTest() {
-        var el1 = driver.findElement(By.id("ru.netology.testing.uiautomator:id/buttonChange"));
-        el1.click();
+        var el1 = driver.findElement(By.id("ru.netology.testing.uiautomator:id/userInput"));
         el1.isDisplayed();
+        el1.click();
+        el1.sendKeys("");
         var el2 = driver.findElement(By.id("ru.netology.testing.uiautomator:id/buttonChange"));
-        el2.click();
         el2.isDisplayed();
-        var el3 = driver.findElement(By.id("ru.netology.testing.uiautomator:id/userInput"));
-        el3.click();
+        el2.click();
+        var el3 = driver.findElement(By.id("ru.netology.testing.uiautomator:id/textToBeChanged"));
         el3.isDisplayed();
-        Assertions.assertEquals("Type something…",el3.getText());
+        el3.click();
+        Assertions.assertEquals("Hello UiAutomator!",el3.getText());
     }
     @Test
     public void sampleTest1() {
         var el1 = driver.findElement(By.id("ru.netology.testing.uiautomator:id/userInput"));
-        el1.click();
         el1.isDisplayed();
+        el1.click();
         el1.sendKeys("test");
         var el2 = driver.findElement(By.id("ru.netology.testing.uiautomator:id/buttonActivity"));
-        el2.click();
         el2.isDisplayed();
+        el2.click();
+
 
         var el5 = driver.findElement(By.id("ru.netology.testing.uiautomator:id/text"));
-        
+
         el5.isDisplayed();
         Assertions.assertEquals("test",el5.getText());
     }
